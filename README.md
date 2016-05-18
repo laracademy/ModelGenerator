@@ -1,5 +1,7 @@
 # Model Generator
 
+[![Latest Stable Version](https://poser.pugx.org/laracademy/model-generator/v/stable)](https://packagist.org/packages/laracademy/model-generator) [![Total Downloads](https://poser.pugx.org/laracademy/model-generator/downloads)](https://packagist.org/packages/laracademy/model-generator) [![Latest Unstable Version](https://poser.pugx.org/laracademy/model-generator/v/unstable)](https://packagist.org/packages/laracademy/model-generator) [![License](https://poser.pugx.org/laracademy/model-generator/license)](https://packagist.org/packages/laracademy/model-generator)
+
 **Model Generator** - Will read your current table structure and generate a model will the filled in fields automatically.
 
 You can generate a single table model, or multiple at once.
