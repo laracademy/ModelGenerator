@@ -1,8 +1,6 @@
-# Better Model Generator (ModelGen)
+# Model Generator
 
-**ModelGen** - Will read your current table structure and generate a model will the filled in fields automatically
-
-`ModelGen` is a command that will quickly generate a model for you based on your current table scheme found in your database.
+**Model Generator** - Will read your current table structure and generate a model will the filled in fields automatically.
 
 You can generate a single table model, or multiple at once.
 
@@ -14,32 +12,50 @@ You can generate a single table model, or multiple at once.
 1. PHP 5.6+
 3. Laravel 5.2+
 
-### Composer
-Start a new Laravel project:
-```php
-composer create-project laravel/laravel your-project-name
+## Usage
+
+### Step 1: Install through Composer
+
+```
+composer require "laracademy/modelgenerator"
 ```
 
-Then run the following to add ModelGen
+### Step 2: Add the Service Provider
+The easiest method is to add the following into your `config/app.php` file
+
 ```php
-composer require "laracademy/modelgen"
+Laracademy\ModelGenerator\ModelGeneratorServiceProvider::class
 ```
 
-### Providers
-Add this to the `bootsrap/app.php` in the service providers array:
+Depending on your set up you may want to only use these providers for development, so you don't update your `production` servers. Instead, add the provider in `app/Providers/AppServiceProvider.php' like so
+
 ```php
-Laracademy\ModelGen\ModelGenProvider::class
+public function register()
+{
+    if($this->app->environment() == 'local) {
+        $this->app->register('Laracademy\ModelGenerator\ModelGeneratorServiceProvider');
+    }
 ```
 
-## Commands
-The console commands provided by ModelGen are as follows:
+### Artisan
+Now that we have added the generator to our project the last thing to do is run Laravel's Arisan command
 
-### model
-----
-The model command will take a single or multiple tables as an option. The command will then generate the models based on those tables as they are found in your database.
+```
+php artisan
+```
 
-```php
-php artisan modelgen:table --table=users
+You will see the following in the list
+
+```
+generate:model
+```
+
+## Examples
+
+### Generating a single table
+
+```
+php artisan generate:model users
 ```
 
 ## License
