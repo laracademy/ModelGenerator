@@ -17,7 +17,7 @@ You can generate a single table model, or multiple at once.
 ### Step 1: Install through Composer
 
 ```
-composer require "laracademy/modelgenerator"
+composer require "laracademy/model-generator"
 ```
 
 ### Step 2: Add the Service Provider
