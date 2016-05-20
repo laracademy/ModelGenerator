@@ -52,12 +52,42 @@ You will see the following in the list
 generate:model
 ```
 
+The command comes with a bunch of different options and they are listed below
+
+ * --table=
+  * this can either be a single table, or a list of tables separated by a comma
+ * --all
+  * this will ignore any tables that you have added and generate a full list of tables within your database to generate models for
+  * please note that this command will only ignore the `migrations` table and no model will be generate for it
+ * --connection=
+  *
+ * --debug
+  * this shows some more information while running
+
 ## Examples
 
 ### Generating a single table
 
 ```
-php artisan generate:model users
+php artisan generate:model --table=users
+```
+
+### Generating a multiple tables
+
+```
+php artisan generate:model --table=users,posts
+```
+
+### Generating all tables
+
+```
+php artisan generate:model --all
+```
+
+### Changing to another connection found in `database.php` and generating models for all tables
+
+```
+php artisan generate:model --connection=spark --all
 ```
 
 ## License
