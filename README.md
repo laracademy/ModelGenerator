@@ -34,8 +34,8 @@ Depending on your set up you may want to only use these providers for developmen
 ```php
 public function register()
 {
-    if($this->app->environment() == 'local) {
-        $this->app->register('Laracademy\ModelGenerator\ModelGeneratorServiceProvider');
+    if($this->app->environment() == 'local') {
+        $this->app->register('\Laracademy\ModelGenerator\ModelGeneratorServiceProvider');
     }
 ```
 
