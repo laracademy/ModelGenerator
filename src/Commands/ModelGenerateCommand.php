@@ -280,7 +280,7 @@ class ModelGenerateCommand extends Command
         $tables = [];
 
         if(strlen($this->options['connection']) <= 0) {
-            $tables = DB::select(DB::raw('show tables'));
+            $tables = collect(DB::select(DB::raw('show tables')))->flatten();
         } else {
             $tables = collect(DB::connection($this->options['connection'])->select(DB::raw('show tables')))->flatten();
         }
