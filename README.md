@@ -37,6 +37,7 @@ public function register()
     if($this->app->environment() == 'local') {
         $this->app->register('\Laracademy\ModelGenerator\ModelGeneratorServiceProvider');
     }
+}
 ```
 
 ### Artisan
