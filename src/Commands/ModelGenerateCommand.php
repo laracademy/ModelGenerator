@@ -237,6 +237,10 @@ class ModelGenerateCommand extends Command
         return $stub;
     }
 
+
+
+
+
     /**
      * returns the stub to use to generate the class
      */
@@ -293,5 +297,7 @@ class ModelGenerateCommand extends Command
 
         return $tables;
     }
+
+
 
 }
